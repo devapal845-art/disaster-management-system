@@ -1,0 +1,105 @@
+.live-indicator {
+  font-size: 12px;
+  color: #22c55e;
+  margin-bottom: 6px;
+}
+
+.layer-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+  padding: 8px;
+  background: #0f172a;
+  border-radius: 10px;
+}
+.alert-box {
+  position: fixed;   /* ✅ stick to screen */
+  bottom: 20px;      /* distance from bottom */
+  right: 20px;       /* distance from right */
+
+  background: #dc2626;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+
+  width: 260px;      /* control size */
+  max-width: 90vw;   /* responsive */
+
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  z-index: 9999;     /* always on top */
+
+  animation: slideIn 0.4s ease;
+}
+.layer-btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 25px;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease;
+}
+
+.layer-btn:hover {
+  background: #334155;
+}
+
+.layer-btn.active {
+  background: #2563eb;
+  box-shadow: 0 0 10px #2563eb88;
+}
+
+.badge {
+  background: red;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  animation: pulseBadge 1.5s infinite;
+}
+
+@keyframes pulseBadge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.severity-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 13px;
+  background: #1e293b;
+  color: white;
+}
+
+
+
+.blinking-marker div {
+  width: 16px;
+  height: 16px;
+  background: red;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+.critical-marker div {
+  width: 18px;
+  height: 18px;
+  background: yellow;
+  border-radius: 50%;
+  border: 3px solid red;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}

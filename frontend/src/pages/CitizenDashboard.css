@@ -1,0 +1,305 @@
+/* ===============================
+   GLOBAL DASHBOARD
+================================= */
+
+.dashboard-container {
+  padding: 40px;
+  background: #0b1220;
+  color: #e2e8f0;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ===============================
+   HEADER
+================================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.header h4 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.risk-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.risk-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* ===============================
+   TOP INTELLIGENCE GRID
+================================= */
+
+.top-intelligence-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+  align-items: stretch;
+}
+
+/* ===============================
+   CARDS
+================================= */
+
+.int-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 22px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.int-card:hover {
+  transform: translateY(-6px);
+  border-color: #334155;
+}
+
+/* ===============================
+   ERI CARD
+================================= */
+
+.eri-card {
+  text-align: center;
+}
+
+.eri-status {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.eri-status.safe {
+  color: #22c55e;
+}
+
+.eri-status.moderate {
+  color: #eab308;
+}
+
+.eri-status.critical {
+  color: #ef4444;
+}
+
+/* ===============================
+   PREP CARDS
+================================= */
+
+.prep-card {
+  text-align: center;
+}
+
+.prep-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+  color: #94a3b8;
+}
+
+/* ===============================
+   MAP
+================================= */
+
+.map-wrapper {
+  margin-bottom: 50px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+}
+
+/* ===============================
+   BOTTOM GRID
+================================= */
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.card-panel {
+  padding: 30px;
+  border-radius: 22px;
+  background: #111827;
+  border: 1px solid #1f2937;
+  transition: all 0.25s ease;
+}
+
+.card-panel:hover {
+  transform: translateY(-6px);
+  border-color: #334155;
+}
+
+.card-panel h5 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+/* ===============================
+   PROGRESS BAR
+================================= */
+
+.progress {
+  height: 10px;
+  background-color: #1f2937;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+
+/* ===============================
+   CHECKBOX
+================================= */
+
+.form-check-input {
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+
+.form-check-label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+
+.action-btn {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-danger {
+  background: #dc2626;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+.btn-warning {
+  background: #f59e0b;
+  border: none;
+  color: black;
+}
+
+.btn-warning:hover {
+  background: #d97706;
+}
+
+/* ===============================
+   ALERT OVERLAY
+================================= */
+.risk-alert-overlay {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  z-index: 99999;              /* 🔥 MUST */
+  pointer-events: none;        /* allows map interaction */
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.risk-alert-box {
+  background: #7f1d1d;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #991b1b;
+
+  width: 260px;
+  max-width: 90vw;
+
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+  pointer-events: auto;   /* button clickable */
+
+  animation: slideUp 0.3s ease;
+}
+
+/* ===============================
+   RISK TEXT COLORS
+================================= */
+
+.risk-text.low {
+  color: #22c55e;
+}
+
+.risk-text.moderate {
+  color: #eab308;
+}
+
+.risk-text.high {
+  color: #f97316;
+}
+
+.risk-text.critical {
+  color: #ef4444;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 1024px) {
+  .top-intelligence-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dashboard-container {
+    padding: 20px;
+  }
+}
