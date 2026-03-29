@@ -45,7 +45,7 @@ app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 MONGODB CONNECTION
 =========================== */
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
 .then(async () => {
   console.log("✅ Connected to MongoDB");
   await seedPreparedKits();
