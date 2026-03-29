@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
- baseURL: "https://disaster-management-system-chi7.onrender.com",
+  baseURL: "https://disaster-management-system-chi7.onrender.com/api"
 });
 
 // 🔥 AUTO ATTACH TOKEN
