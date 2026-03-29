@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5000", {
+const socket = io( "https://disaster-management-system-chi7.onrender.com", {
   transports: ["websocket"],
 });
 
