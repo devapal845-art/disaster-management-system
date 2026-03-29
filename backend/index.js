@@ -48,6 +48,7 @@ MONGODB CONNECTION
 mongoose.connect(process.env.MONGO_URI)
 .then(async () => {
   console.log("✅ Connected to MongoDB");
+  console.log("MONGO_URI:", process.env.MONGO_URI);
   await seedPreparedKits();
 })
 .catch((err) => {
@@ -238,7 +239,7 @@ socket.on("responderLocationUpdate", async (data) => {
 START SERVER
 =========================== */
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server running on port ${PORT}`);
