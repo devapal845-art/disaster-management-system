@@ -15,7 +15,7 @@ import "./CitizenMap.css";
 const CitizenMap = ({ mySOS, animatedNGO = {}, autoEvacuate }) =>  {
   const [position, setPosition] = useState(null);
   const [routeCoords, setRouteCoords] = useState([]);
-
+const [criticalMember, setCriticalMember] = useState(null);
   const [mapType, setMapType] = useState("normal");
   const [severityFilter, setSeverityFilter] = useState("All");
   const [earthquakes, setEarthquakes] = useState([]);
@@ -174,7 +174,7 @@ const fetchAllData = async () => {
     ? sos.assignedResponder?._id?.toString()
     : sos.assignedResponder?.toString();
 
- const responder = animatedNGO?.[partnerId];
+const responder = animatedNGO?.[String(partnerId)];
 
   console.log("MY SOS:", sos._id);
   console.log("RESPONDER ID:", partnerId);
@@ -477,15 +477,15 @@ const AutoFollow = ({ position }) => {
     )
     .map((sos) => {
       const partnerId =
-        typeof sos.assignedResponder === "object"
-          ? sos.assignedResponder?._id?.toString()
-          : sos.assignedResponder?.toString();
+  typeof sos.assignedResponder === "object"
+    ? sos.assignedResponder?._id?.toString()
+    : sos.assignedResponder?.toString();
 
-      if (!partnerId) return null;
+const responder = animatedNGO?.[String(partnerId)];
 
-      const responder = animatedNGO?.[partnerId];
-
-      console.log("LOOKUP:", partnerId, responder);
+      cconsole.log("NGO STATE:", animatedNGO);
+console.log("RESPONDER ID:", partnerId);
+console.log("FOUND:", animatedNGO?.[String(partnerId)]);
 
       if (!responder) return null;
 

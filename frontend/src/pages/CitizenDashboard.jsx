@@ -15,7 +15,6 @@ const CitizenDashboard = () => {
   const [form, setForm] = useState({});
   const [mySOS, setMySOS] = useState([]);
   const [groupMembers, setGroupMembers] = useState([]);
-  const [criticalMember, setCriticalMember] = useState(null);
   const [dismissedMembers, setDismissedMembers] = useState([]);
   const [alertHistory, setAlertHistory] = useState([]);
   const [showRiskAlert, setShowRiskAlert] = useState(false);
