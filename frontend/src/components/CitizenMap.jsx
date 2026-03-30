@@ -18,7 +18,25 @@ const safeDefaultIcon = L.icon({
   iconSize: [25, 41],
   iconAnchor: [12, 41],
 });
+const normalIcon = L.icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
 
+const dangerIcon = L.icon({
+  iconUrl: "https://maps.google.com/mapfiles/ms/icons/orange-dot.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+});
+
+const criticalIcon = L.icon({
+  iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+});
 import API from "../services/api";
 import "./CitizenMap.css";
 const CitizenMap = ({ mySOS, animatedNGO = {}, autoEvacuate }) =>  {
@@ -72,6 +90,7 @@ const criticalIcon = L.divIcon({
   className: "critical-marker",
   html: `<div></div>`
 });
+
 
 // 🔵 Normal member
 const normalIcon = safeDefaultIcon;
