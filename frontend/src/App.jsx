@@ -7,17 +7,7 @@ import GovEmployeeDashboard from "./pages/GovEmployeeDashboard";
 import NGOCommandDashboard from "./pages/NGOCommandDashboard";
 import NGOUserDashboard from "./pages/NGOUserDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 
-// 🔥 FIX MARKER ISSUE (MUST BE TOP LEVEL)
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-});
 /* ===============================
    PRIVATE ROUTE PROTECTION
 ================================= */
