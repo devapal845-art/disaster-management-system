@@ -11,7 +11,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-
+const safeDefaultIcon = L.icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
 
 import API from "../services/api";
 import "./CitizenMap.css";
@@ -41,7 +47,7 @@ console.log("mySOS:", mySOS);
   const [lastRefresh, setLastRefresh] = useState(new Date());
 
   /* ================= SAFE ICONS ================= */
-  const defaultIcon = new L.Icon.Default();
+  const defaultIcon = safeDefaultIcon;
 
   const blinkingIcon = L.divIcon({
     className: "blinking-marker",
@@ -68,7 +74,7 @@ const criticalIcon = L.divIcon({
 });
 
 // 🔵 Normal member
-const normalIcon = new L.Icon.Default();
+const normalIcon = safeDefaultIcon;
   /* ================= SAFE COORD CHECK ================= */
   const isValidCoord = (lat, lng) =>
     typeof lat === "number" &&
