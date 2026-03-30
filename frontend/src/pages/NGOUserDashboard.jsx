@@ -88,7 +88,17 @@ const NGOUserDashboard = () => {
 
           setMemberLocation({ latitude, longitude });
           setGpsActive(true);
+console.log("🚀 SENDING LOCATION:", {
+  userId: ngoId,
+  latitude,
+  longitude
+});
 
+socket.emit("ngoLocationUpdate", {
+  userId: ngoId,
+  latitude,
+  longitude
+});
           // ✅ FIXED SOCKET PAYLOAD
           socket.emit("ngoLocationUpdate", {
             userId: ngoId,   // 🔥 IMPORTANT FIX

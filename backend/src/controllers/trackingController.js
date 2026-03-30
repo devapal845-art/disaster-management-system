@@ -70,14 +70,20 @@ const updateResponderLocation = async (req, res) => {
 
     const io = req.app.get("io");
 
-    if (io) {
-      io.emit("locationUpdated", {
-        userId: user._id,
-        latitude,
-        longitude,
-        updatedAt: new Date()
-      });
-    }
+   if (io) {
+  console.log("📡 EMITTING NGO LOCATION:", {
+    userId: user._id.toString(),
+    latitude,
+    longitude
+  });
+
+  io.emit("ngoLocationBroadcast", {
+    userId: user._id.toString(), // 🔥 VERY IMPORTANT
+    latitude,
+    longitude,
+    updatedAt: new Date()
+  });
+}
 
     /* ===============================
        RESPONSE
