@@ -108,10 +108,10 @@ socket.emit("ngoLocationUpdate", {
 
           try {
 
-            await API.patch("/ngo/location", {
-              latitude,
-              longitude
-            });
+            await API.patch(`/tracking/${ngoId}/location`, {
+  latitude,
+  longitude
+});
 
           } catch (err) {
 
