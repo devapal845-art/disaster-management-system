@@ -10,7 +10,7 @@ const CitizenDashboard = () => {
   const name = localStorage.getItem("name");
   const userId = localStorage.getItem("userId");
   const phone = localStorage.getItem("phone");
-
+const [isUpdating, setIsUpdating] = useState(false);
   /* ================= STATE ================= */
   const [form, setForm] = useState({});
   const [mySOS, setMySOS] = useState([]);
