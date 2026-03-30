@@ -21,7 +21,7 @@ const [isUpdating, setIsUpdating] = useState(false);
   const [autoEvacuate, setAutoEvacuate] = useState(false);
   const [intelligence, setIntelligence] = useState(null);
   const [smartKit, setSmartKit] = useState([]);
-
+const [criticalMember, setCriticalMember] = useState(null);
 const [animatedNGO, setAnimatedNGO] = useState({});
   /* ================= FETCH ACTIVE SOS ================= */
   useEffect(() => {
